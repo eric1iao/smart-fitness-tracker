@@ -61,7 +61,7 @@ $ pip install pyflux‑0.4.17‑cp38‑cp38‑win32.whl
 
 ## Errors
 
-If you find an error (there are plenty) that's not already listed, please open a new [issue](https://github.com/eric1iao/smart-fitness-tracker/issues).
+If you find an error that's not already listed, please open a new [issue](https://github.com/eric1iao/smart-fitness-tracker/issues).
 
 ## Contributing
 
