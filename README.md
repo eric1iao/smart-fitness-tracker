@@ -1,28 +1,76 @@
-Installation and Setup
-In order to make sure that the provided code runs on all platforms (Windows, Max and Linux). We strongly advise to make use of Anaconda (or Miniconda). Using Anaconda, you can run the code in your favorite IDE and install the ML4QS requirements in a separate virtual environment. Naturally, if you are familiar with virtual environments and requirements files one can choose the setup of your choice (Docker Start Up Guide Below), but please be aware that this setup is not tested and you have to solve the problems you encounter yourself. Download and install Anaconda from: https://docs.anaconda.com/anaconda/install/ Clone the ML4QS repository by running:
+# Jonathan's Simple Operating System
 
-git clone https://www.github.com/mhoogen/ML4QS.git
-Windows:
-Open the Anaconda Prompt as Adminstrator (when you right click on the Anaconda Prompt, you see the option 'as Adminstrator'). Run the following command:
+## About
 
-conda create --name myenv python=3.8.8
-conda activate myenv
-Then, navigate back to the Python3Code folder using cd <path to your ML4QS/Python3Code folder>.
+This is a simple, CLI-based operating system that I am building for fun and to learn about how operating systems work. 
 
-Run the following commands to install the required dependencies:
+## Getting Started
 
-pip3 install -r requirements.txt 
-pip3 install -r requirements_git.txt 
-It could be the case that you run into an error when installing pybrain/pyflux. Two possible solutions are given here:
+### Prerequisites
 
-An error stating: '... error microsoft visual c++ 14.0 or greater is required'. In this case, you need to install Visual Studio Build Tools via the following link: https://visualstudio.microsoft.com/visual-cpp-build-tools/ . Once installed, you need to open it, click on modify and mark 'Desktop development with C++'. Afterwards, you might need to reboot. More information can be found via: https://docs.microsoft.com/en-us/answers/questions/136595/error-microsoft-visual-c-140-or-greater-is-require.html.
+- Bash Shell
+- Bochs
+- Bochs SDL plugin
+- NASM Assembler
+- `build-essential`
+- GCC (in build-essential)
+- `genisoimage`
 
-If there is a different pyflux error, installing pyflux via a wheel might help. Download a pyflux wheel (based on your python version and desktop) and pip install it in the current working directory. Follow the steps to perform.
-Step 1: Download the pyflux wheel file from this Github repository via the folder pyflux_wheel. There are two files in this folder. We work with python 3.8.8 so therefor the number 38 is in the file. You either pick the 32 or 64 file. Check your desktop settings (64 or 32). You can check that here
-Step 2: Put the wheel file in the current working directory
-Step 3: Install the wheel with the following command:
+On Ubuntu, you can install the prerequisites with the following command:
 
-pip install pyflux‑0.4.17‑cp38‑cp38‑win_amd64.whl
-Or if you have a 32 desktop:
+```
+sudo apt install build-essential nasm genisoimage bochs bochs-sdl
+```
 
-pip install pyflux‑0.4.17‑cp38‑cp38‑win32.whl
+On other Linux systems, you may have to install the prequisite packages manually and/or compile Bochs with the SDL plugin (for example, the AUR does not have bochs-sdl). You can find [more information](http://bochs.sourceforge.net/doc/docbook/user/compiling.html#COMPILE-SDL) on it here. After extracting Bochs, you can compile it with SDL using the following commands.
+
+```
+$ ./configure --with-sdl
+$ make
+$ sudo make install
+```
+
+I have only tested this on Arch Linux and Ubuntu, however, so it's possible that set up problems may come up on other systems, such as Windows or OS X. Additionally, I have only ran this OS through Bochs on Bash, so this may not work on other shells.
+
+
+### Running the OS
+
+Use the following commands to run the OS
+
+- To build the OS
+```
+$ make
+```
+or
+```
+$ make fresh
+```
+- To run (and build if necessary) the OS
+```
+$ make run
+```
+- To remove object and other intermediate files (highly recommended, not doing so has occasionally caused problems)
+```
+$ make clean
+```
+
+## Authors
+
+* Jonathan Tong &mdash; [Jont828](https://github.com/Jont828)
+
+
+## Errors
+
+If you find an error (there are plenty) that's not already listed, please open a new [issue](https://github.com/Jont828/Jonathan-OS/issues).
+
+## Contributing
+
+If you would like to contribute new features/material or by fixing errors, please fork the repository, make your changes, and open a pull request.
+
+## Acknowledgements
+
+I would like to thank Erik Helin and Adam Renberg, the authors of [The Little Book About OS Development](http://littleosbook.github.io/), and Brandon Friesen, the author of [Bran's Kernel Development Tutorial](http://www.osdever.net/bkerndev/Docs/title.htm), whose tutorials I used to begin the project.
+
+## License
+
+This project is licensed under the [GNU GPL v3](https://www.gnu.org/licenses/gpl-3.0.en.html). Follow the link for more details.
