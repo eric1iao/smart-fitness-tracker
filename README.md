@@ -40,8 +40,8 @@ It could be the case that you run into an error when installing pybrain/pyflux. 
 
 An error stating: '... error microsoft visual c++ 14.0 or greater is required'. In this case, you need to install Visual Studio Build Tools via the following link: https://visualstudio.microsoft.com/visual-cpp-build-tools/ . Once installed, you need to open it, click on modify and mark 'Desktop development with C++'. Afterwards, you might need to reboot. More information can be found via: https://docs.microsoft.com/en-us/answers/questions/136595/error-microsoft-visual-c-140-or-greater-is-require.html.
 
-If there is a different pyflux error, installing pyflux via a wheel might help. Download a pyflux wheel (based on your python version and desktop) and pip install it in the current working directory. Follow the steps to perform.
-Step 1: Download the pyflux wheel file from this Github repository via the folder pyflux_wheel. There are two files in this folder. We work with python 3.8.8 so therefor the number 38 is in the file. You either pick the 32 or 64 file. Check your desktop settings (64 or 32). You can check that here
+If there is a different pyflux error, installing pyflux via a wheel might help. Download a pyflux wheel (based on your python version and desktop) and pip install it in the current working directory.
+Step 1: Download the pyflux wheel file. Pick the 32 or 64 file. Check your desktop settings (64 or 32).
 Step 2: Put the wheel file in the current working directory
 Step 3: Install the wheel with the following command:
 
