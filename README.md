@@ -1,25 +1,20 @@
-# Jonathan's Simple Operating System
+# Smart Fitness Tracker
 
 ## About
 
-This is a simple, CLI-based operating system that I am building for fun and to learn about how operating systems work. 
+This is a machine learning model allowing users to classify barbell exercises and count repetitions through accelerometer and gyroscope data from a fitness watch device.
 
 ## Getting Started
 
 ### Prerequisites
 
-- Bash Shell
-- Bochs
-- Bochs SDL plugin
-- NASM Assembler
-- `build-essential`
-- GCC (in build-essential)
-- `genisoimage`
+- Anaconda
+- Docker
 
-On Ubuntu, you can install the prerequisites with the following command:
+Clone the ML4QS repository by running:
 
 ```
-sudo apt install build-essential nasm genisoimage bochs bochs-sdl
+git clone https://www.github.com/mhoogen/ML4QS.git
 ```
 
 On other Linux systems, you may have to install the prequisite packages manually and/or compile Bochs with the SDL plugin (for example, the AUR does not have bochs-sdl). You can find [more information](http://bochs.sourceforge.net/doc/docbook/user/compiling.html#COMPILE-SDL) on it here. After extracting Bochs, you can compile it with SDL using the following commands.
